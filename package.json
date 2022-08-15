@@ -1,5 +1,5 @@
 {
-  "name": "ra-12.1-redux-observable",
+  "name": "ra-12.1-redux-observable-front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,5 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://sergius92739.github.io/ra-12.1-redux-observable"
+  "homepage": "https://sergius92739.github.io/ra-12.1-redux-observable-front"
 }
