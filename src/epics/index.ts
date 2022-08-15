@@ -1,8 +1,8 @@
-import { Observable, Action, AnyAction } from '@reduxjs/toolkit';
+import { Observable, AnyAction } from '@reduxjs/toolkit';
 import { Epic, ofType } from 'redux-observable';
 import { of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { map, filter, debounceTime, switchMap, tap, catchError, delay } from 'rxjs/operators';
+import { map, filter, debounceTime, switchMap, catchError } from 'rxjs/operators';
 import {
   searchSkillsFailure,
   searchSkillsRequest,
@@ -24,7 +24,6 @@ export const changeSearchEpic: Epic<SearchAction, SearchAction, TState> = (actio
   filter(o => o !== ''),
   debounceTime(100),
   map(o => searchSkillsRequest({ search: o })),
-  // tap(o => console.log('o: ', o)),
 )
 
 export const searchSkillsEpic: Epic<SearchAction, SearchAction, TState> = (action$) => action$.pipe(

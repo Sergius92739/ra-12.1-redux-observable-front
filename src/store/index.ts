@@ -1,10 +1,7 @@
-import {Action, AnyAction, applyMiddleware, configureStore} from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import skillsReducer from '../slices/skillsSlice';
 import {createEpicMiddleware, combineEpics, Epic} from 'redux-observable';
 import {changeSearchEpic, searchSkillsEpic} from '../epics';
-import {merge} from 'rxjs/operators';
-import { TEpic } from '../epics';
-import { Observable } from 'rxjs';
 
 const epic: Epic = combineEpics(
   changeSearchEpic,
